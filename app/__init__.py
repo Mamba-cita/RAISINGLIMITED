@@ -14,8 +14,13 @@ app.config['SECRET_KEY'] = 'gigi'
 ckeditor = CKEditor(app)
 
 
-#db connection
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root@localhost/man"
+#local db connection
+#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root@localhost/man"
+
+#online db
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e?reconnect=true"
+
+
 #initialize db
 db = SQLAlchemy(app)
 
