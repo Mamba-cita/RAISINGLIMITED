@@ -1,0 +1,57 @@
+
+
+{% for message in get_flashed_messages() %}
+	
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	
+{% endfor %}
+
+
+{% if name_to_update  %}
+	<h1>User Updated!</h1>
+	<br/><br/>
+<table class="table table-hover table-bordered table-striped">
+
+{% for name_to_update  in name_to_update  %}
+	<tr>
+	<td>{{ name_to_update.id }}. <a href="">{{ name_to_update.name }}</a> - {{ name_to_update.email }}
+	</tr>
+{% endfor %}
+
+</table>
+	
+
+{% else %}
+	<h1>Update User</h1>
+	<br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+	<form method="POST" action="/update_profile/{{name.id}}">
+		{{ form.hidden_tag() }}
+
+		{{ form.name.label(class="form-label") }}
+
+		{{ form.name(class="form-control",value=name.name) }}
+		<br/>
+		{{ form.email.label(class="form-label") }}
+
+		{{ form.email(class="form-control", value=name.email) }}
+		<br/>
+
+	
+
+		{{ form.submit(class="btn btn-secondary") }}
+
+
+	</form>
+<a href="{{url_for('delete_profile', id=name.id)}}" class="btn btn-danger">Delete</a>
+</div>
+{% endif %}
+
+
+
+
+

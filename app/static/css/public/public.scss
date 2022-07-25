@@ -17,31 +17,6 @@ body {
 }
 
 
-.item1 { grid-area: header; }
-.item3 { grid-area: main; }
-.item5 { grid-area: footer; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'main main main main main main '
-    'footer footer footer footer footer footer';
-  gap: 0px;
- 
-  padding: 0px;
-}
-
-.grid-container > div {
-
-  padding:  0;
-  font-size: 14px;
-  outline:none;
-}
-
-
-
-
 .sidebar {
   position: fixed;
   top: 0;

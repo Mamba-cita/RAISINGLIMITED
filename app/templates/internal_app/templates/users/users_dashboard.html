@@ -1,0 +1,53 @@
+
+
+
+
+<small>Welcome {{ current_user.name }}</small>
+
+
+
+<hr/>
+<br/>
+<br/>
+
+
+
+
+
+
+
+<div class="card">
+  <div class="container">
+    <div class="row">
+       <div class="col-md-8">
+
+    <div class="card-header">
+        <strong>Name : </strong>{{current_user.name}} <br/>
+    </div>
+    <div class="card-body">
+      <p class="card-title"><strong>Email : </strong>{{current_user.email}} <br/></p>
+      <p class="card-text"><strong>User Id : </strong>{{current_user.id}} <br/></p>
+      <p class="card-text"><strong>Date Joined : </strong> {{current_user.timestamp}}<br/><br/></p>
+
+      <br/>
+
+    </div>
+    <div class="col-md-4">
+      <img src="{{ url_for('static', filename='img/default.png') }}" alt="{{ user.name }}" class="img-fluid" width="100" height="100" align="right"/>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+   </div>
+
+
+
+<hr/>
+
+
+<a href="{{url_for('logout')}}" class="btn btn-outline-secondary btn-sm">Logout</a>
+
+
+
+

@@ -1,0 +1,54 @@
+
+{% extends 'home/home_base.html' %}
+
+{% block title %} Blogs {% endblock %}
+
+{% block main %} 
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  {% endfor %}
+  <div class="shadow p-4 mb-2 bg-white rounded">
+  
+      <form action="{{url_for('update_blogs_internal', id=post.id)}}" method="post">
+          {{form.hidden_tag()}}
+       
+           <div class="form-group">
+            {{form.title.label(class="form-label")}}
+            {{form.title (class="form-control")}}
+           </div>
+           <div class="form-group">
+            {{form.body.label (class="form-label")}}
+            {{form.body (class="form-control", rows="5")}}
+           </div>
+           <div class="form-group">
+            {{form.slug.label(class="form-label")}}
+            {{form.slug (class="form-control")}}
+           </div>
+       
+           <br/>
+           <br/>
+           <div class="form-group">
+            {{form.submit ( class="btn btn-outline-secondary btn-sm")}}
+           </div>
+       
+       
+         </form>
+         {{ ckeditor.load() }}
+         {{ ckeditor.config(name='body') }}
+  
+  </div>
+  
+  <br/>
+  <a href="{{url_for('blogs_internal')}}" class="btn btn-outline-secondary btn-sm  m-4 ">Back To Blogs</a>
+  <a href="{{url_for('delete_blog_internal', id=post.id)}}" class="btn btn-outline-danger btn-sm">Delete</a>
+  
+  <br/>
+  </div>
+  {%endblock%}

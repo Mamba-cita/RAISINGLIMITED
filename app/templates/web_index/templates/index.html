@@ -1,6 +1,59 @@
+
 {% extends 'web_index/base.html' %}
-{% block title%}AFRIRAISING{%endblock%}
 
 {% block content %}
-helloww
+<section class="bg_primary">
+  <div class="container">
+    <h2 class='text-center'>AFRI RAISING LIMITED</h2>
+    <div class="split">
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      <div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+      </div>
+  </div>
+</section>
+<section class="bg_black">
+  <div class="container">
+    <div class="split">
+    
+      <div>
+        <h2>Your simple and transparent Logistics</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          </div>
+      <div> 
+        <img src="{{ url_for('static', filename='img/heavy.png') }}" alt="truck" />
+      </div>
+    
+    </div>
+  </div>
+  </div>
+  </section>
+  <section class="bg_accent">
+    <div class="container">
+      <div class="split">
+      
+        <div>
+          <img src="{{ url_for('static', filename='img/cloudtrucks.jpg') }}" alt="truck"  />
+        </div>
+        <h3>Safe Logistics/Deliveries</h3>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+      
+      </div>
+    </div>
+    </section>
 {% endblock %}
