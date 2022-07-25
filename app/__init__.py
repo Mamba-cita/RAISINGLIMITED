@@ -1,7 +1,6 @@
 from flask import Flask
-from  flask_login import LoginManager, login_user, logout_user, current_user, login_required
+from flask_login import LoginManager, login_user, logout_user, current_user, login_required
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate,MigrateCommand
 from flask_mysqldb import MySQL
 from flask_ckeditor import CKEditor
 
@@ -19,7 +18,6 @@ ckeditor = CKEditor(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root@localhost/man"
 #initialize db
 db = SQLAlchemy(app)
-Migrate = Migrate(app, db)
 
 
 login_manager =LoginManager()
