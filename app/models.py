@@ -66,3 +66,6 @@ class Orders(db.Model):
     updated_at = db.Column(db.DateTime(timezone=True), default=datetime.now()) 
     created_by= db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) 
     
+    
+    
+    db.create_all()
