@@ -298,7 +298,7 @@ def single_blog_internal(id):
     return render_template('home/blogs_internal/single_blog_internal.html', post=post)
     
 
-
+#jjjjjjjjjjjjjj
 #edit a blog post
 
 @app.route('/update_blogs_internal/<id>', methods=['GET', 'POST'])
