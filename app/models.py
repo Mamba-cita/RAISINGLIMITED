@@ -44,7 +44,6 @@ class Posts(db.Model):
     
 class Shipments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    client_id = db.Column(db.Integer, db.ForeignKey('client.id'), nullable=False)
     client_name = db.Column(db.String(80), nullable=False)
     ron = db.Column(db.Integer)
     Shipments_type = db.Column(db.String(80), nullable=False)
@@ -53,19 +52,17 @@ class Shipments(db.Model):
     acc_manager = db.Column(db.String(80), nullable=False)
     created_at = db.Column(db.DateTime(timezone=True), default=datetime.now())
     updated_at = db.Column(db.DateTime(timezone=True), default=datetime.now())
-    created_by = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
 class Orders(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    shipment_id = db.Column(db.Integer, db.ForeignKey('shipments.id'), nullable=False)
     transport_rate = db.Column(db.Integer, nullable=False)
     truck_reg =db.Column(db.String(80), nullable=False)
     qty_to_load = db.Column(db.Integer, nullable=False)
     created_by = db.Column(db.String(80))
     created_at = db.Column(db.DateTime(timezone=True), default=datetime.now())
     updated_at = db.Column(db.DateTime(timezone=True), default=datetime.now()) 
-    created_by= db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) 
+  
     
     
     
-    db.create_all()
+    #db.create_all()

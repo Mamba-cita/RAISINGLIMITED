@@ -2,6 +2,7 @@ from flask import Flask
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_mysqldb import MySQL
+from flask_migrate import Migrate
 from flask_ckeditor import CKEditor
 
 
@@ -23,7 +24,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://b3ce1f92dab14b:2b89e72b@us-cdbr
 
 #initialize db
 db = SQLAlchemy(app)
-
+migrate = Migrate(app, db)
 
 login_manager =LoginManager()
 login_manager.init_app(app)
