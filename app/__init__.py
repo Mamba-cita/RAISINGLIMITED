@@ -22,6 +22,10 @@ ckeditor = CKEditor(app)
 app.config['SQLALCHEMY_DATABASE_URI'] ="mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e"
 #online db
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e?reconnect=true'
+
+UPLOAD_FOLDER = 'app/static/img/'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 db = SQLAlchemy(app)
 
 

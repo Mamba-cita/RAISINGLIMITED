@@ -5,7 +5,7 @@ from sqlalchemy import null
 from app import db
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import login_user, login_required, logout_user, current_user,UserMixin
+from flask_login import UserMixin
 
 
 
@@ -15,6 +15,7 @@ class User(db.Model,UserMixin):
     name = db.Column(db.String(200), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    profile_pic = db.Column(db.String(), nullable=True)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     posts = db.relationship('Posts', backref='poster')
    

@@ -26,9 +26,25 @@
 {{post.body | safe}}
 <br/>
 <br/>
-<small>By: {{post.poster.name}}</small>
-<br/>
-<small>Date: {{post.date_created}} </small>
+<div class="card mb-3">
+  <div class="raw no-gutters">
+    <div class="col-md-2">
+      {% if post.poster.profile_pic %}
+      <img src="{{ url_for('static', filename='img/' + post.poster.profile_pic)}}"  alt="..." width="150" align="left">
+      {% else %}
+      <img src="{{ url_for('static', filename='img/default.png')}}"  alt="..." width="150" align="left">
+      {% endif %}
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <h5 class="card-title md-2"> {{post.poster.name}}</h5>
+        <p class="card-text md-2"> {{post.date_created}}</p>
+        <p class="card-text md-2"> <small class="text-muted">About Author</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <br/>
 <br/>
 <a href="{{url_for('blog', id=post.id)}}" class="btn btn-outline-secondary btn-sm">Read More</a>

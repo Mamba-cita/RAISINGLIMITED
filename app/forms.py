@@ -1,9 +1,10 @@
+import profile
 from flask import Flask
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, Regexp, EqualTo
 from flask_ckeditor import CKEditorField
-
+from flask_wtf.file import FileField, FileAllowed
 
 
 class SearchForm(FlaskForm):
@@ -14,6 +15,7 @@ class RegisterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email(), Length(4, 64)])
     password = PasswordField('Password', validators=[DataRequired(), Length(4, 64)])
     confirm_password = StringField('Confirm Password', validators=[DataRequired(), Length(4, 64), EqualTo('password')])
+    profile_pic = FileField("Profile Picture" )
     submit = SubmitField('Register')
     
 

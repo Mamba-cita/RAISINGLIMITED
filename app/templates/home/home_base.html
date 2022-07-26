@@ -197,11 +197,16 @@
         <li>
           <div class="profile-details">
             <div class="profile-content">
-              <a href=""
-                ><img
-                  src="{{ url_for('static', filename='img/profile.png') }}"
+              <a href="{{url_for('update_profile', id=current_user.id)}}">
+                {% if current_user.profile_pic %}
+
+                <img src="{{ url_for('static', filename='img/' + current_user.profile_pic)}}" alt="profile" />
+                {% else %}
+                <img
+                  src="{{ url_for('static', filename='img/default.png') }}"
                   alt=""
                 />
+                {% endif %}
               </a>
             </div>
             <div class="name-job">

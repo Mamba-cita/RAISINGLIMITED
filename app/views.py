@@ -4,6 +4,9 @@ from app.forms import LoginForm,RegisterForm,PostsForm,SearchForm
 from app.models import User,Posts,Shipments,Orders
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
+from werkzeug.utils import secure_filename
+import uuid as uuid
+import os
 
 
 
@@ -130,6 +133,7 @@ def delete_post(id):
 #Registration page
 
 @app.route('/register', methods=['GET', 'POST'])
+@login_required
 def register():
     name=None
     form = RegisterForm()
@@ -171,19 +175,38 @@ def update_profile(id):
     if request.method == 'POST':
         name_to_update.name = request.form['name']
         name_to_update.email = request.form['email']
-        #update db
-        try:
-            db.session.commit()
-            flash('Your profile has been updated!', 'success')
-            return redirect(url_for('users'))
-        except:
-            flash('Your profile could not be updated!', 'error')
-            return render_template('internal_app/templates/users/profile/update_profile.html', form=form, name=name_to_update)
+        
+        
+        #check for profile pic
+        if request.files['profile_pic']:
+            name_to_update.profile_pic = request.files['profile_pic']
+            #grab image name
+            pic_name = secure_filename(name_to_update.profile_pic.filename)
+            
+            #set uuid for image name
+            pic_uuid = str(uuid.uuid4()) + '_' + pic_name
+                #save image to folder
+            name_to_update.profile_pic.save(os.path.join(app.config['UPLOAD_FOLDER'], pic_uuid))
+            #change image name
+            name_to_update.profile_pic  = pic_uuid
+            #update db
+            try:
+                db.session.commit()
+                flash('Your profile has been updated!', 'success')
+                return render_template('internal_app/templates/users/profile/update_profile.html', form=form, name=name_to_update)
+            except:
+                flash('Your profile could not be updated!', 'error')
+                return render_template('internal_app/templates/users/profile/update_profile.html', form=form, name=name_to_update)
+        else:
+             db.session.commit()
+             flash('Your profile has been updated!', 'success')
+             return render_template('internal_app/templates/users/profile/update_profile.html', form=form, name=name_to_update)
     else:
         return render_template('internal_app/templates/users/profile/update_profile.html', form=form, name=name_to_update)
        
  #Remove user profile
 @app.route('/delete_profile/<int:id>')
+@login_required
 def delete_profile(id):
         user_to_delete = User.query.get_or_404(id)
         try:
@@ -356,16 +379,13 @@ def delete_blog_internal(id):
 
 @app.route('/shipments', methods=['GET', 'POST'])
 @login_required
-
 def shipments():
     shipments = Shipments.query.all()
-
     return render_template('public/home/shipments.html', shipments=shipments)
 
 
 @app.route('/shipments_creation', methods=['GET', 'POST'])
 @login_required
-
 def shipments_creation():
     return render_template('public/home/shipments_creation.html')
 
@@ -395,6 +415,7 @@ def search():
 #admin page
 
 @app.route('/admin')
+@login_required
 def admin():
     return render_template('internal_app/admin//admin.html')
 

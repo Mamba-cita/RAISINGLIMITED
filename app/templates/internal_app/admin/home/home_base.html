@@ -184,18 +184,19 @@
         <li>
           <div class="profile-details">
             <div class="profile-content">
-              <a href="{{url_for('user_dashboard')}}"
-                ><img
-                  src="{{ url_for('static', filename='img/profile.png') }}"
+              <a href="{{url_for('update_profile')}}"
+                ><img 
+                  src="{{ url_for('static', filename='img/profile.png') }}" 
                   alt=""
                 />
               </a>
             </div>
             <div class="name-job">
-              <div class="profile_name">{{current_user.username}}</div>
+              <a href="{{url_for('update_profile')}}">
+              <div class="profile_name"> {{current_user.username}}</div></a>
               <div class="job">{{current_user.user_job}}</div>
             </div>
-            <a href="{{url_for('logout')}}">
+            <a href="{{url_for('logout')}}">   
               <i class="bx bx-log-out"></i>
             </a>
           </div>
