@@ -1,4 +1,6 @@
 from flask import Flask
+import os
+from dotenv import load_dotenv
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from flask_mysqldb import MySQL
@@ -11,20 +13,23 @@ app = Flask(__name__)
 
 
 
-app.config['SECRET_KEY'] = 'gigi'
+
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 ckeditor = CKEditor(app)
 
 
-#local db connection
-#app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root@localhost/man"
 
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get ('SQLALCHEMY_DATABASE_URI')
 #online db
-app.config['CLEARDB_DATABASE_URL'] = "mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e?reconnect=true"
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e?reconnect=true'
+db = SQLAlchemy(app)
+
+
 
 
 #initialize db
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+migrate = Migrate(app,db)
 
 login_manager =LoginManager()
 login_manager.init_app(app)
