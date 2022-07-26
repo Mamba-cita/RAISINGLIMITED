@@ -19,7 +19,7 @@ ckeditor = CKEditor(app)
 
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get ('SQLALCHEMY_DATABASE_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] ="mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e"
 #online db
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://b3ce1f92dab14b:2b89e72b@us-cdbr-east-06.cleardb.net/heroku_32bfd973b92d25e?reconnect=true'
 db = SQLAlchemy(app)
