@@ -2,9 +2,8 @@
 * {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -26,16 +25,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: 400px;
   background-color: #fff;
-  -webkit-box-shadow: white;
-          box-shadow: white;
+  box-shadow: white;
   border-radius: 10px;
   border: 1px solid #fff;
-  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .header {
@@ -45,13 +41,11 @@ body {
   color: blue;
   border-radius: 10px 10px 0px 0px;
 }
-
 .header h1 {
   font-size: 28px;
   font-weight: bold;
   text-align: top;
 }
-
 .header p {
   font-size: 22px;
   font-weight: bold;
@@ -63,7 +57,6 @@ body {
   text-align: center;
   padding: 50px 50px 30px 50px;
 }
-
 .login-area input {
   width: 100%;
   padding: 8px;
@@ -75,50 +68,42 @@ body {
   font-weight: bold;
   color: #333;
   background-color: bisque;
-  -webkit-box-shadow: 0px 0px 10px #d8c9c9;
-          box-shadow: 0px 0px 10px #d8c9c9;
+  box-shadow: 0px 0px 10px rgb(216, 201, 201);
 }
-
 .login-area .username:focus,
 .login-area .email:focus,
 .login-area .password:focus,
 .login-area .confirm-password:focus {
-  background-color: #eb9329;
+  background-color: rgb(235, 147, 41);
 }
-
 .login-area .btn {
   width: 150px;
   padding: 10px;
-  background-color: #eb9329;
+  background-color: rgb(235, 147, 41);
   border: none;
   outline: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
   color: aqua;
-  -webkit-transition: .2s;
-  transition: .2s;
+  transition: 0.2s;
   cursor: pointer;
 }
-
 .login-area .btn:hover {
-  background-color: #2e2821;
-  color: #eb9329;
+  background-color: rgb(46, 40, 33);
+  color: rgb(235, 147, 41);
 }
 
 .footer {
-  background-color: #ca8638;
+  background-color: rgb(202, 134, 56);
   padding: 18px;
   color: bisque;
   text-align: center;
   border-radius: 0px 0px 10px 10px;
 }
-
 .footer a {
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-/*# sourceMappingURL=register.css.map */
+  transition: 0.2s;
+}/*# sourceMappingURL=register.css.map */

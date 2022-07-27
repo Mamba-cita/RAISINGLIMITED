@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "",
-    "sources": [
-        "admin.scss"
-    ],
-    "names": [],
-    "file": "admin.css"
-}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"admin.css"}

@@ -2,34 +2,28 @@
 body {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .container {
   position: relative;
   max-width: 1590px;
   width: 100%;
-  background: #f7f3f3;
+  background: rgb(247, 243, 243);
   border-radius: 6px;
   padding: 30px;
   margin: 15px;
-  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
 }
-
 .container header {
   position: relative;
   font-size: 20px;
   font-weight: 600;
   color: black;
 }
-
 .container form {
   position: relative;
   margin-top: 16px;
@@ -54,7 +48,6 @@ body {
   position: absolute;
   background-color: #fff;
   border-radius: 5px;
-  -webkit-transition: 0.7s ease;
   transition: 0.7s ease;
   padding: 10px;
 }
@@ -62,22 +55,19 @@ body {
 .container form .form.second {
   opacity: 0;
   pointer-events: none;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 form.setActive .form.second {
   opacity: 1;
   pointer-events: auto;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 form.setActive .form.first {
   opacity: 0;
   pointer-events: none;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 .container form .title {
@@ -90,28 +80,16 @@ form.setActive .form.first {
 }
 
 .container form .fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .container form .input-fields {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  width: calc(100% / 4 - 15px);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  width: calc(25% - 15px);
+  flex-direction: column;
   margin: 4px 0;
 }
 
@@ -134,28 +112,21 @@ form.setActive .form.first {
 }
 
 .input-fields input:is(:focus, :valid) {
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-.input-fields input[type="date"] {
+.input-fields input[type=date] {
   color: #707070;
 }
 
-.input-fields input[type="date"]:valid {
+.input-fields input[type=date]:valid {
   color: #333;
 }
 
 .container form button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   height: 45px;
   max-width: 200px;
@@ -165,7 +136,6 @@ form.setActive .form.first {
   border-radius: 5px;
   margin: 25px 0;
   background: #4070f4;
-  -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   cursor: pointer;
 }
@@ -179,12 +149,8 @@ form button i {
 }
 
 form .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 form .buttons button {
@@ -199,10 +165,9 @@ form .buttons button {
     display: none;
   }
   form .fields .input-fields {
-    width: calc(100% / 3 - 15px);
+    width: calc(33.3333333333% - 15px);
   }
 }
-
 @media (max-width: 650px) {
   .container form {
     overflow-y: scroll;
@@ -211,13 +176,11 @@ form .buttons button {
     display: none;
   }
   form .fields .input-fields {
-    width: calc(100% / 2 - 15px);
+    width: calc(50% - 15px);
   }
 }
-
 @media (max-width: 600px) {
   form .fields .input-fields {
     width: 100%;
   }
-}
-/*# sourceMappingURL=shipments_creation.css.map */
+}/*# sourceMappingURL=shipments_creation.css.map */

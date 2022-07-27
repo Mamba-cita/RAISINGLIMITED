@@ -2,9 +2,8 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 nav {
@@ -14,23 +13,16 @@ nav {
   width: 100%;
   height: 70px;
   background: #1b1e1f;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 nav .navbar {
   max-width: 1365px;
   height: 100%;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 50px;
 }
 
@@ -47,19 +39,13 @@ nav .navbar .nav-links {
 }
 
 nav .navbar .nav-links .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
 nav .navbar .nav-links .links li {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   list-style: none;
   padding: 0 14px;
 }
@@ -79,14 +65,12 @@ nav .navbar .nav-links .links li .arrow {
   width: 20px;
   text-align: center;
   line-height: 70px;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .navbar .nav-links .links li:hover .servicess-arrow,
 .navbar .nav-links .links li:hover .login-arrow {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .navbar .nav-links .links .sub-menu {
@@ -96,8 +80,7 @@ nav .navbar .nav-links .links li .arrow {
   background: #1b1e1f;
   line-height: 40px;
   border-radius: 0 0 4px 4px;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
   display: none;
 }
 
@@ -147,7 +130,6 @@ nav .navbar .nav-links .links li .arrow {
   border-radius: 4px;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -158,16 +140,14 @@ nav .navbar .nav-links .links li .arrow {
 }
 
 .navbar .search-box .input-box::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 20px;
   width: 20px;
   right: 11px;
   top: -8px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   background: #1b1e1f;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -178,8 +158,7 @@ nav .navbar .nav-links .links li .arrow {
   z-index: 99;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   outline: none;
   border: none;
   border-radius: 4px;
@@ -211,7 +190,6 @@ nav .navbar .nav-links .links li .arrow {
     font-size: 15px;
   }
 }
-
 @media screen and (max-width: 986px) {
   nav .navbar .nav-links {
     display: block;
@@ -223,23 +201,16 @@ nav .navbar .nav-links .links li .arrow {
     background: #1b1e1f;
     padding: 20px;
     line-height: 40px;
-    -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
     z-index: 100;
   }
   nav .navbar .nav-links .sidebar-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
   }
   .navbar .bx-menu,
-  .nav-links .sidebar-logo .logo_name {
+.nav-links .sidebar-logo .logo_name {
     color: #fff;
     font-size: 25px;
     font-weight: 500;
@@ -254,7 +225,7 @@ nav .navbar .nav-links .links li .arrow {
     text-decoration: none;
   }
   .navbar .bx-menu,
-  .nav-links .sidebar-logo .logo_name {
+.nav-links .sidebar-logo .logo_name {
     display: block;
   }
   .nav-links .sidebar-logo .bx-x {
@@ -272,8 +243,7 @@ nav .navbar .nav-links .links li .arrow {
     position: relative;
     top: 0;
     left: 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
+    box-shadow: none;
   }
   .navbar .nav-links .links .sub-menu li {
     border-bottom: none;
@@ -282,10 +252,8 @@ nav .navbar .nav-links .links li .arrow {
     line-height: 40px;
   }
 }
-
 @media screen and (max-width: 450px) {
   nav .navbar .nav-links {
     max-width: 100%;
   }
-}
-/*# sourceMappingURL=navbar.css.map */
+}/*# sourceMappingURL=navbar.css.map */

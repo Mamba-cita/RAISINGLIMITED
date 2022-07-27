@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAEA,AAAA,kBAAkB,CAAA;EACd,WAAW,EAAC,IAAI;EAChB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,YAAY,EAAC,IAAI;EACjB,aAAa,EAAC,IAAI;CAErB;;AACD,AAAA,KAAK,CAAA;EACD,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,MAAM,EAAC,IAAI;EACX,gBAAgB,EAAE,IAAI;EACtB,aAAa,EAAE,GAAG;EAClB,UAAU,EAAE,iBAAiB;CAEhC",
-    "sources": [
-        "add_post.scss"
-    ],
-    "names": [],
-    "file": "add_post.css"
-}
+{"version":3,"sources":["add_post.scss","add_post.css"],"names":[],"mappings":"AAEA;EACI,iBAAA;EACA,WAAA;EACA,YAAA;EACA,kBAAA;EACA,mBAAA;ACDJ;;ADIA;EACI,WAAA;EACA,YAAA;EACA,aAAA;EACA,YAAA;EACA,sBAAA;EACA,kBAAA;EACA,6BAAA;ACDJ","file":"add_post.css"}
