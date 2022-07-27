@@ -279,7 +279,11 @@ def login():
 @app.route('/home')
 @login_required
 def home():
-    return render_template('home/home.html')
+    shipments = Shipments.query.order_by(Shipments.created_at)
+    return render_template('internal_app/admin/home/home.html', shipments=shipments)
+                          
+
+
 
 #internal blog routes
 @app.route('/blogs_internal')
@@ -380,14 +384,25 @@ def delete_blog_internal(id):
 @app.route('/shipments', methods=['GET', 'POST'])
 @login_required
 def shipments():
-    shipments = Shipments.query.all()
-    return render_template('public/home/shipments.html', shipments=shipments)
+    shipments = Shipments.query.order_by(Shipments.created_at)
+    return render_template('internal_app/admin/home/shipments.html', shipments=shipments)
 
+
+
+#shipment creation
 
 @app.route('/shipments_creation', methods=['GET', 'POST'])
 @login_required
 def shipments_creation():
-    return render_template('public/home/shipments_creation.html')
+    return render_template('internal_app/admin/home/shipments_creation.html')
+
+#order creation
+@app.route('/order_creation', methods=['GET', 'POST'])
+@login_required
+def order_creation():
+    return render_template('internal_app/admin/home/order.html')
+
+
 
 #pass data to  the navbar
 

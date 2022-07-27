@@ -1,19 +1,77 @@
-{% extends 'public/home/home_base.html' %}
+{% extends 'home/home_base.html' %} 
 
- {% block title %} HOME {% endblock %}
+ {% block title %}Home {% endblock %}
 
 {% block main %} 
 
+<head>
+    <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='scss/internal_app/index/index_base.css') }}"
+  />
+
+  
+</head>
+<body>
+  {% for message in get_flashed_messages()%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  
+  <div class="home_container">
+<div class="container_home_page">
+      <div class="container_shipment_page">
+      <div class="shipment_home_header">
+        <div class="new_shipment">
+          <a href="{{ url_for('shipments_creation') }}" class="btn btn-outline-secondary btn-sm">Create a new shipment</a>
+          </div>
+          <div class="shipment_allocation">
+            <a href="{{ url_for('shipments_creation') }}"></a>
+          </div>
+      </div>
+      <div class="shipment_display_body">
+          {% for Shipments in shipments%}
+       
+              <table class="table table-striped">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col" >Shipments ID</th>
+                      <th scope="col">Client</th>
+                      <th scope="col">Shipments Type</th>
+                      <th scope="col">Allocation</th>
+                      <th scope="col">Creation Date</th>
+                      <th scope="col">Commodity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      
+                    <tr>
+                      
+                      <td>{{Shipments.ron}}</td>
+                      <td>{{Shipments.client_name}}</td>
+                      <td>{{Shipments.Shipments_type}}</td>
+                      <td>{{Shipments.total_allocation}}</td>
+                      <td>{{Shipments.created_at}}</td>
+                      <td>{{Shipments.commodity}}</td>
+                      
+                    </tr>
+                  </tbody>
+                 
+                </table>
+         {% endfor%}
+      
+      </div>
+      </div>
+      </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+     <script src="{{ url_for('static', filename='js/public/shipments_creation.js') }}"></script>
+  </body>
 
 
 
-
-What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the
-printing and typesetting industry. Lorem Ipsum has been the industry's standard
-dummy text ever since the 1500s, when an unknown printer took a galley of type
-and scrambled it to make a type specimen book. It has survived not only five
-centuries, but also the leap into electronic typesetting, remaining essentially
-unchanged. It was popularised in the 1960s with the release of Letraset sheets
-containing Lorem Ipsum passages, and more recently with desktop publishing
-software like Aldus PageMaker including versions of Lorem Ipsum. 
 {%endblock%}

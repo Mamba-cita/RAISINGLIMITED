@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"shipments.css"}
+{"version":3,"sources":["shipments.scss","shipments.css"],"names":[],"mappings":"AACA;EACI,kBAAA;EACA,iBAAA;EACA,UAAA;EACA,eAAA;EAEA,kBAAA;EACA,aAAA;EACA,YAAA;EACA,2CAAA;ACDJ","file":"shipments.css"}

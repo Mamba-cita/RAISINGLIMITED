@@ -17,11 +17,13 @@
   </div>
   {% endfor %}
   
-       <div class="buttons">
+       <div class="new_shipment">
         <a href="{{ url_for('shipments_creation') }}" class="button">Create a new shipment</a>
         </div>
-   
-
+        <div class="shipment_allocation">
+          <a href="{{ url_for('shipments_creation') }}" class="button"> Create Allocation</a>
+          </div
+      
 <div class="container">
 
     {% for Shipments in shipments%}

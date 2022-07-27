@@ -1,29 +1,36 @@
-{% extends 'public/home/home_base.html' %}
+{% extends 'home/home_base.html' %} 
 
  {% block title %}Shipment {% endblock %}
 
 {% block main %} 
+
 <head>
     <link
     rel="stylesheet"
-    href="{{ url_for('static', filename='css/public/shipments_creation.css') }}"
+    href="{{ url_for('static', filename='scss/internal_app/shipment/shipment_page/shipments.css') }}"
   />
+  
 </head>
 <body>
   {% for message in get_flashed_messages()%}
+  
   <div class="alert alert-warning alert-dismissible fade show" role="alert">
     {{message}}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
   {% endfor %}
   
-       <div class="buttons">
-        <a href="{{ url_for('shipments_creation') }}" class="button">Create a new shipment</a>
-        </div>
-   
-
-<div class="container">
-
+<div class="shipments_container">
+<div class="container_shipment_page">
+<div class="shipment_page_header">
+  <div class="new_shipment">
+    <a href="{{ url_for('shipments_creation') }}" class="btn btn-outline-secondary btn-sm">Create a new shipment</a>
+    </div>
+    <div class="shipment_allocation">
+      <a href="{{ url_for('order_creation') }}" class="btn btn-outline-secondary btn-sm"> Create Allocation</a>
+    </div>
+</div>
+<div class="shipment_page_body">
     {% for Shipments in shipments%}
  
         <table class="table table-striped">
@@ -49,24 +56,25 @@
                 <td>{{Shipments.commodity}}</td>
                 
               </tr>
-              </a>
             </tbody>
            
           </table>
-
-
-
-
    {% endfor%}
 
 </div>
+</div>
+</div>
 
+<!-- Modal -->
+<!-- Button trigger modal -->
+<!-- Modal -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
      <script src="{{ url_for('static', filename='js/public/shipments_creation.js') }}"></script>
   </body>
-</html>
+
+<!-- Modal -->
 
 
 {%endblock%}

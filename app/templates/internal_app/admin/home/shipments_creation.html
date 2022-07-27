@@ -1,4 +1,4 @@
-{% extends 'public/home/home_base.html' %}
+{% extends 'home/home_base.html' %} 
 
  {% block title %} New Shipment {% endblock %}
 
@@ -6,8 +6,9 @@
 <head>
     <link
     rel="stylesheet"
-    href="{{ url_for('static', filename='css/public/shipments_creation.css') }}"
+    href="{{ url_for('static', filename='scss/internal_app/shipment/new_shipment/shipments_creation.css') }}"
   />
+
 </head>
 <body>
     {% for message in get_flashed_messages()%}
@@ -18,17 +19,13 @@
     {% endfor %}
     
     <div class="buttons">
-        <a href="{{ url_for('shipments') }}" class="button">Shipments</a>
+        <a href="{{ url_for('shipments') }}" class="btn btn-outline-success m-2 btn-sm button">Back To Shipments</a>
         </div>
 
 <div class="container">
     <header>
-        <h1>New Shipment</h1>
+        <h3>New Shipment</h3>
     </header>
-
-
-
-
     <form action="#">
         <!--- first tab   -->
         <div class="form first">
