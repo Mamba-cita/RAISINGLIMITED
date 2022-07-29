@@ -1,0 +1,35 @@
+.modal_container {
+  background: rgb(241, 239, 233);
+  border-radius: 2px;
+  padding: 20px;
+}
+
+.modal_container form .input-fields {
+  display: flex;
+  width: calc(33.3333333333% - 15px);
+  flex-direction: column;
+  margin: 4px 2px;
+}
+
+.input-fields label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+.modal_fields {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-fields input {
+  outline: none;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  padding: 0 15px;
+  height: 38px;
+  margin: 8px 0;
+}/*# sourceMappingURL=order_modal.css.map */
