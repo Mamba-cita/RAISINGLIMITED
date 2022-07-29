@@ -287,17 +287,20 @@ body {
   font-size: 12px;
 }
 
-.main-content {
+.main_container {
   position: absolute;
   height: 100%;
   width: calc(100% - 240px);
   //width: 90%;
   left: 240px;
+  overflow: auto;
   transition: all 0.5s ease;
+
 
 
   .content-area {
     padding: 10px 5px ;
+    overflow: auto;
   }
 }
 
@@ -305,6 +308,7 @@ body {
   left: 80px;
   transition: all 0.5s ease;
   width:94%;
+  overflow: auto;
 }
 
 @media (max-width: 400px) {

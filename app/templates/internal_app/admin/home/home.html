@@ -32,9 +32,7 @@
           </div>
       </div>
       <div class="shipment_display_body">
-          {% for Shipments in shipments%}
-       
-              <table class="table table-striped">
+          <table class="table table-striped">
                   <thead class="thead-dark">
                     <tr>
                       <th scope="col" >Shipments ID</th>
@@ -47,6 +45,7 @@
                   </thead>
                   <tbody>
                       
+                    {% for Shipments in shipments%}
                     <tr>
                       
                       <td>{{Shipments.ron}}</td>
@@ -55,12 +54,11 @@
                       <td>{{Shipments.total_allocation}}</td>
                       <td>{{Shipments.created_at}}</td>
                       <td>{{Shipments.commodity}}</td>
-                      
+                    
                     </tr>
+                    {%endfor%}
                   </tbody>
-                 
                 </table>
-         {% endfor%}
       
       </div>
       </div>

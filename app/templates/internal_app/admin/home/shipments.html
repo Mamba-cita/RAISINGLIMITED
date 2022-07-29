@@ -39,10 +39,9 @@
     </div>
 </div>
 <div class="shipment_page_body">
-    {% for Shipments in shipments%}
- 
         <table class="table table-striped">
             <thead class="thead-dark">
+      
               <tr>
                 <th scope="col" >Shipments ID</th>
                 <th scope="col">Client</th>
@@ -51,9 +50,10 @@
                 <th scope="col">Creation Date</th>
                 <th scope="col">Commodity</th>
               </tr>
+              
             </thead>
             <tbody>
-                
+              {% for Shipments in shipments%}
               <tr>
                 
                 <td>{{Shipments.ron}}</td>
@@ -62,12 +62,13 @@
                 <td>{{Shipments.total_allocation}}</td>
                 <td>{{Shipments.created_at}}</td>
                 <td>{{Shipments.commodity}}</td>
-                
+              
               </tr>
+              {%endfor%}
             </tbody>
            
           </table>
-   {% endfor%}
+  
 
 </div>
 </div>
